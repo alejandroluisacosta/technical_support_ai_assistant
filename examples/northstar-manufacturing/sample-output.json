@@ -1,0 +1,39 @@
+{
+  "summary": "Multiple users in Production cannot submit supplier assessments in the Supplier Management application since this morning. Viewing and editing assessments still functions. The customer has attempted basic workarounds (logout, different browser) without success. No recent configuration changes were made. This is blocking compliance work with same-day deadlines.",
+  "classification": "Bug",
+  "priority": "High",
+  "rationale": "The issue is classified as Bug because a core function (submitting assessments) suddenly stopped working for multiple users without configuration changes, while related functions (view/edit) remain operational. Priority is High due to confirmed business impact on a compliance team with same-day deadlines, affecting multiple users in Production.",
+  "facts": {
+    "environment": {
+      "status": "confirmed",
+      "value": "Production"
+    },
+    "application": {
+      "status": "confirmed",
+      "value": "Supplier Management"
+    },
+    "error_messages": {
+      "status": "confirmed",
+      "value": [
+        "Unexpected error"
+      ]
+    },
+    "object_ids": {
+      "status": "unknown"
+    }
+  },
+  "missing_information": [
+    "What is the exact full text of the error message, including any error codes or reference numbers displayed?",
+    "What are the specific assessment IDs affected by this issue?",
+    "What user IDs or roles are experiencing the problem?",
+    "What browser types and versions were tested?",
+    "What is the exact timestamp or time range when the issue first started?",
+    "Are there any correlation IDs, request IDs, or trace IDs visible in browser developer tools or network logs when the error occurs?"
+  ],
+  "troubleshooting_steps": [
+    "This field will be filled when this tool has access to the product documentation."
+  ],
+  "draft_response": "Thank you for reporting this issue. I understand that multiple users in your Production environment are unable to submit supplier assessments since this morning, receiving an 'Unexpected error' message, while viewing and editing assessments remains functional. I recognize this is impacting your compliance team's urgent deadlines.\n\nTo investigate this effectively, I need to gather some additional information:\n\n- What is the exact full text of the error message, including any error codes or reference numbers?\n- What are the specific assessment IDs affected?\n- Which user IDs or roles are experiencing the problem?\n- What browser types and versions were tested?\n- What was the exact timestamp when the issue first started?\n- Are there any correlation IDs, request IDs, or trace IDs visible in browser developer tools or network logs when the error occurs?\n\nPlease provide these details and I will proceed with the investigation.",
+  "escalate_to_development": false,
+  "escalation_reason": "This field will be filled when this tool has access to the product documentation."
+}

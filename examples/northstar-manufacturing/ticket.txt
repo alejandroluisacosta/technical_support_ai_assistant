@@ -1,0 +1,23 @@
+CUSTOMER
+Northstar Manufacturing
+
+ENVIRONMENT
+Production
+
+IMPACT
+Several users
+
+Subject
+Users cannot submit supplier assessments
+
+Application
+Supplier Management
+
+Description
+Customer message
+
+Since this morning, our users receive an 'Unexpected error' message when submitting supplier assessments.
+Viewing and editing assessments still works. We tried logging out and using another browser, but the issue remains.
+This is preventing our compliance team from completing assessments due today. We have not made any
+configuration changes recently.
+Please treat this as urgent.

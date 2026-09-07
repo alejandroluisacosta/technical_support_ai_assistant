@@ -1,1 +1,152 @@
-{}
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local/schema/analysis.schema.json",
+  "title": "SupportTicketAnalysis",
+  "description": "Structured analysis of a technical support ticket. Factual slots are confirmed or unknown only. Troubleshooting and escalation are placeholders until product documentation is connected.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "summary",
+    "classification",
+    "priority",
+    "rationale",
+    "facts",
+    "missing_information",
+    "troubleshooting_steps",
+    "draft_response",
+    "escalate_to_development",
+    "escalation_reason"
+  ],
+  "properties": {
+    "summary": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Concise summary of the issue, using only confirmed facts."
+    },
+    "classification": {
+      "type": "string",
+      "enum": [
+        "Bug",
+        "Configuration issue",
+        "User question",
+        "Service request",
+        "Insufficient information"
+      ]
+    },
+    "priority": {
+      "type": "string",
+      "enum": ["Low", "Medium", "High", "Critical"]
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Brief explanation of the selected classification and priority, grounded in confirmed facts and unknown slots."
+    },
+    "facts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "environment",
+        "application",
+        "error_messages",
+        "object_ids"
+      ],
+      "properties": {
+        "environment": {
+          "$ref": "#/$defs/optionalStringFact",
+          "description": "Deployment environment stated in the ticket (e.g. Production)."
+        },
+        "application": {
+          "$ref": "#/$defs/optionalStringFact",
+          "description": "Application or product area stated in the ticket."
+        },
+        "error_messages": {
+          "$ref": "#/$defs/optionalStringArrayFact",
+          "description": "Exact error messages quoted from the ticket."
+        },
+        "object_ids": {
+          "$ref": "#/$defs/optionalStringArrayFact",
+          "description": "Relevant object IDs stated in the ticket (e.g. assessment, business partner)."
+        }
+      }
+    },
+    "missing_information": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "description": "Questions for the customer, driven by unknown fact slots and other gaps. May be empty."
+    },
+    "troubleshooting_steps": {
+      "type": "array",
+      "const": [
+        "This field will be filled when this tool has access to the product documentation."
+      ],
+      "description": "Placeholder until product documentation is connected. The model must not invent troubleshooting steps."
+    },
+    "draft_response": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Draft reply that could be sent to the customer."
+    },
+    "escalate_to_development": {
+      "type": "boolean",
+      "const": false,
+      "description": "Escalation is not proposed until product documentation is connected."
+    },
+    "escalation_reason": {
+      "type": "string",
+      "const": "This field will be filled when this tool has access to the product documentation.",
+      "description": "Placeholder until product documentation is connected. The model must not invent an escalation recommendation."
+    }
+  },
+  "$defs": {
+    "optionalStringFact": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status", "value"],
+          "properties": {
+            "status": { "const": "confirmed" },
+            "value": { "type": "string", "minLength": 1 }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status"],
+          "properties": {
+            "status": { "const": "unknown" }
+          }
+        }
+      ]
+    },
+    "optionalStringArrayFact": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status", "value"],
+          "properties": {
+            "status": { "const": "confirmed" },
+            "value": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "type": "string", "minLength": 1 }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status"],
+          "properties": {
+            "status": { "const": "unknown" }
+          }
+        }
+      ]
+    }
+  }
+}

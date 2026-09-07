@@ -1,1 +1,3 @@
-# Dependencies will be added when the analyzer is implemented.
+huggingface_hub>=0.26.0
+jsonschema>=4.23.0
+python-dotenv>=1.0.0

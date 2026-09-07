@@ -1,0 +1,35 @@
+{
+  "summary": "Customer from Meridian Supplies can sign in to the Vendor Portal but cannot locate where to respond to a purchase order request. No error messages are displayed. Other portal functionality works.",
+  "classification": "User question",
+  "priority": "Medium",
+  "rationale": "The customer is asking for guidance on how to use a feature (responding to purchase order requests) rather than reporting a malfunction. The issue affects a single user, is not blocking other work, and has a same-day desired timeline. No error messages or technical failures are reported.",
+  "facts": {
+    "environment": {
+      "status": "confirmed",
+      "value": "Production"
+    },
+    "application": {
+      "status": "confirmed",
+      "value": "Vendor Portal"
+    },
+    "error_messages": {
+      "status": "unknown"
+    },
+    "object_ids": {
+      "status": "unknown"
+    }
+  },
+  "missing_information": [
+    "What is the purchase order number or ID for the request you received?",
+    "Was the purchase order request received via email notification, or did you navigate to it directly in the portal?",
+    "What is your user role or permission level in the Vendor Portal?",
+    "Which specific pages or menu sections have you already checked?",
+    "Can you provide a screenshot of the portal interface you see upon login, or describe the main navigation options available to you?"
+  ],
+  "troubleshooting_steps": [
+    "This field will be filled when this tool has access to the product documentation."
+  ],
+  "draft_response": "Thank you for contacting support. I understand you can successfully sign in to the Vendor Portal and access other pages, but you need help locating where to respond to a purchase order request.\n\nTo assist you effectively, could you please provide the following information:\n\n- What is the purchase order number or ID for the request you received?\n- Was the purchase order request received via email notification, or did you navigate to it directly in the portal?\n- What is your user role or permission level in the Vendor Portal?\n- Which specific pages or menu sections have you already checked?\n- Can you provide a screenshot of the portal interface you see upon login, or describe the main navigation options available to you?\n\nOnce I have these details, I can guide you to the correct location or investigate further if needed.",
+  "escalate_to_development": false,
+  "escalation_reason": "This field will be filled when this tool has access to the product documentation."
+}
