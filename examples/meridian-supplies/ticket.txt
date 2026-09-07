@@ -1,0 +1,22 @@
+CUSTOMER
+Meridian Supplies
+
+ENVIRONMENT
+Production
+
+IMPACT
+Single user
+
+Subject
+Where do I respond to a purchase order request?
+
+Application
+Vendor Portal
+
+Description
+Customer message
+
+I received a purchase order request this morning and need to submit a response.
+I can sign in to the Vendor Portal, but I cannot find the section where I respond to purchase order requests.
+I have not seen an error message. Viewing other pages in the portal works.
+This is not blocking other work, but I would like to complete the response today.
